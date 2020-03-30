@@ -49,7 +49,7 @@ router.post('/login',(req,res)=>{
  /**
  * @api {post} /user/updata 用户修改密码.
  * @apiName /updata
- * @apiGroup User
+ * @apiGroup User(所有参数均在post方式body中的www里面传参)
  *
  * @apiParam {String} _id 需要修改密码的用户id
  * @apiParam {String} passWord 需要修改密码用户新密码

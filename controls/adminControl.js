@@ -17,10 +17,14 @@ let addMin =async (adminName,passWord)=>{
 let addLogin =async (adminName,passWord)=>{
     let result = await adminModel.findOne({adminName,passWord})
     if(result){
-        let {_id} = result
-        let token = createToken({result})
-      await adminModel.updateOne({_id},{token})
-        return {token}
+        let {_id,token} = result
+        if(token){
+            return {token}
+        }else{
+            let token = createToken({result})
+            await userModel.updateOne({_id},{token})
+            return {token}
+        }
     }else{
         throw '用户名或密码错误'
     }

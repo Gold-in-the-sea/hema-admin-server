@@ -218,7 +218,7 @@
     "url": "/user/updata",
     "title": "用户修改密码.",
     "name": "/updata",
-    "group": "User",
+    "group": "User(所有参数均在post方式body中的www里面传参)",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -261,7 +261,7 @@
     },
     "version": "0.0.0",
     "filename": "router/userRouter.js",
-    "groupTitle": "User"
+    "groupTitle": "User(所有参数均在post方式body中的www里面传参)"
   },
   {
     "type": "post",
