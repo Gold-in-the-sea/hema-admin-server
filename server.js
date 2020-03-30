@@ -7,6 +7,7 @@ const app = express()
 let shopRouter=require('./router/shopRouter')
 let userRouter = require('./router/userRouter')
 let adminRouter = require('./router/adminRouter')
+let orderRouter = require('./router/orderRouter')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 //用户接口
@@ -17,6 +18,8 @@ app.use('/shop',shopRouter)
 
 //管理员接口
 app.use('/admin',adminRouter)
+//订单接口
+app.use('/order',orderRouter)
 
 
 
