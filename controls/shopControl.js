@@ -27,7 +27,7 @@ let updateShop = async (_id, updateInfo) => {
 let findShopByPage = async (page, pageSize) => {
     let allShop = await shopModel.find()
     //总数据条数
-    let allCount = allFood.length
+    let allCount = allShop.length
     //每一页的数据
     let result = await shopModel.find().skip((Number(page) - 1) * pageSize).limit(Number(pageSize))
     return { result, allCount }
