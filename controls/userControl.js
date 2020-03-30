@@ -31,7 +31,7 @@ let userList = async ()=>{
     if(result){
         return result
     }else{
-        throw '暂无用户信息'
+        return '暂无用户信息'
     }
 }
 //修改用户密码
