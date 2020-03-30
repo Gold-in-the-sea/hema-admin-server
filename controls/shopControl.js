@@ -1,4 +1,4 @@
-const shopModel = require('../db/model/userModel')
+const shopModel = require('../db/model/shopModel')
 
 
 let insertShop = async (obj) => {
