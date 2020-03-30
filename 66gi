@@ -1,0 +1,21 @@
+[33mafe0304[m HEAD@{0}: checkout: moving from wt to dev
+[33ma841730[m HEAD@{1}: checkout: moving from dev to wt
+[33mafe0304[m HEAD@{2}: checkout: moving from wt to dev
+[33ma841730[m HEAD@{3}: checkout: moving from dev to wt
+[33mafe0304[m HEAD@{4}: pull: Merge made by the 'recursive' strategy.
+[33m606b8d9[m HEAD@{5}: checkout: moving from dev to dev
+[33m606b8d9[m HEAD@{6}: commit: 商品接口1.0
+[33m49efe78[m HEAD@{7}: checkout: moving from dev to dev
+[33m49efe78[m HEAD@{8}: commit (merge): 第一此提交
+[33ma841730[m HEAD@{9}: checkout: moving from dev to dev
+[33ma841730[m HEAD@{10}: checkout: moving from wt to dev
+[33ma841730[m HEAD@{11}: checkout: moving from dev to wt
+[33ma841730[m HEAD@{12}: merge wt: Fast-forward
+[33m32e4d2a[m HEAD@{13}: checkout: moving from wt to dev
+[33ma841730[m HEAD@{14}: commit: 第一次提交
+[33m5566963[m HEAD@{15}: commit: 第一次提交
+[33m32e4d2a[m HEAD@{16}: checkout: moving from dev to wt
+[33m32e4d2a[m HEAD@{17}: checkout: moving from wt to dev
+[33m32e4d2a[m HEAD@{18}: pull origin dev: Fast-forward
+[33m72ad2cf[m HEAD@{19}: checkout: moving from master to wt
+[33m72ad2cf[m HEAD@{20}: clone: from git@github.com:Gold-in-the-sea/hema-admin-server.git

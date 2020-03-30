@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const express =require('express')
+const router=express.Router()
 const {
     findShopByKw,
     findShopByType,
@@ -8,8 +8,8 @@ const {
     delShop,
     findShop,
     insertShop
-} = require('../controls/shopControl')
-
+}=require('../controls/shopControl')
+ 
 
 /**
  * @api {post} /shop/add 平台添加商品
@@ -25,16 +25,15 @@ const {
  * @apiParam {String} err 状态码.
  * @apiParam {String} msg 信息提示.
  */
-router.post('/add', (req, res) => {
+router.post('/add',(req,res)=>{
     //接受数据
-
-    let { name, price, img, desc, shopType } = req.body
+    let {name,price,img,desc,shopType}=req.body
     //处理数据 插入数据库
-    insertShop({ name, price, img, desc, shopType })
-        .then(() => { res.send({ err: 0, msg: '插入成功' }) })
-        .catch((err) => {
-            res.send({ err: -1, msg: '插入失败请重试' })
-        })
+    insertShop({name,price,img,desc,shopType})
+    .then(()=>{res.send({err:0,msg:'插入成功'})})
+    .catch((err)=>{
+        res.send({err:-1,msg:'插入失败请重试'})
+    })
     //返回数据
 })
 /**
@@ -53,8 +52,10 @@ router.post('/getInfoById',(req,res)=>{
     .then((infos)=>{res.send({list:infos,err:0,msg:'查询成功'})})
     .catch((err)=>{res.send({err:-1,msg:'查询失败请重试'})})
   })
-/**
- * @api {post} /shop/del  菜品删除
+
+
+  /**
+ * @api {post} /shop/del  商品删除
  * @apiName del
  * @apiGroup Shop
  *
@@ -72,6 +73,7 @@ router.post('/del',(req,res)=>{
     .catch((err)=>{res.send({err:-1,msg:'删除失败请重试'})})
   
   })
+
 
   /**
  * @api {post} /shop/update   修改
@@ -92,11 +94,11 @@ router.post('/del',(req,res)=>{
 router.post('/update',(req,res)=>{
     // 获取修改数据的参数
     let {_id,name,price,img,desc,shopType} = req.body 
-    console.log({_id,name,price,img,desc,shopType})
     updateShop(_id,{name,price,img,desc,shopType})
     .then(()=>{res.send({err:0,msg:'修改成功'})})
     .catch((err)=>{res.send({err:-1,msg:'修改失败请重试'})})
   })
+
 
   /**
  * @api {post} /shop/getInfos   分页查询
@@ -115,15 +117,14 @@ router.post('/getInfos',(req,res)=>{
     let pageSize = req.body.pageSize ||2 //每页几条数据
     findShopByPage(page,pageSize)
     .then((data)=>{
-       console.log(data)
        let {result,allCount}=data 
       res.send({err:0,msg:'查询成功',list:result,allCount})
     })
-    .catch((err)=>{
-        console.log(err)
-        res.send({err:-1,msg:'查询失败请重试'})})
+    .catch((err)=>{res.send({err:-1,msg:'查询失败请重试'})})
   })
-// 分类查询  
+
+
+  // 分类查询  
 // 分类查询的数据也可能很多 需要和分页查询做关联
 /**
  * @api {post} /shop/getInfosByType   分类查询
@@ -144,7 +145,9 @@ router.post('/getInfosByType',(req,res)=>{
    .catch((err)=>{res.send({err:-1,msg:'查询失败请重试'})})
   
   })
-// 模糊查询 关键字查询带分页功能
+
+
+  // 模糊查询 关键字查询带分页功能
 // 也要和分页做关联
 /**
  * @api {post} /shop/getInfosByKw   关键字查询
@@ -168,6 +171,4 @@ router.post('/getInfosByKw',(req,res)=>{
     })
     .catch((err)=>{res.send({err:-1,msg:'查询失败请重试'})})
   })
-
-
-module.exports = router
+module.exports = router 
