@@ -23,6 +23,6 @@ app.use('/order',orderRouter)
 
 
 
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log('服务器启动')
 })
